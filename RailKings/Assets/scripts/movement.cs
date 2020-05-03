@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
-
+using PathCreation;
 public class movement : MonoBehaviour
 {
     private bool forward;
@@ -12,51 +12,77 @@ public class movement : MonoBehaviour
     public GameObject rig ;
     public GameObject head;
     public bool colliding;
+    public PathCreator pathCreator;
+    float distanceTravelled;
+
+    //spline
 
 
+    public void Forward() { forward = true; }
     void Start()
     {
+        if (pathCreator != null)
+        {
+            // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
+            pathCreator.pathUpdated += OnPathChanged;
+        }
         forward = true;
         colliding = false;
+    }
+
+    void OnPathChanged()
+    {
+        distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+    }
+    private void ApplyGravity() {
+        rig.transform.Translate(transform.up * -1*Time.deltaTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //  PositionController();
-        //  ApplyGravity();
-     
-        RaycastHit hit;
+        Debug.Log(forward);
+        
+            //check if wall infront of you
+            RaycastHit hit;
+            Vector3 p1 = transform.position + Vector3.up * 0.25f;
+            if (Physics.Raycast(p1, Vector3.forward, out hit, .5f))
+            {
+                if (hit.transform.tag == "wall") { forward = false; }
 
-        //Bottom of controller. Slightly above ground so it doesn't bump into slanted platforms. (Adjust to your needs)
-        Vector3 p1 = transform.position + Vector3.up * 0.25f;
+            }
 
-        if (Physics.Raycast(p1, Vector3.forward, out hit, .5f))
-        {
-            if (hit.transform.tag == "wall") { forward = false; }
+
+            //no falling, 
+            //if not colliding and moving forward follow camera, but not off bounds
+            if (head.transform.position.x > -1.28f && head.transform.position.x < 1.28f)
+            {
+
+                transform.position = new Vector3(head.transform.position.x, transform.position.y, transform.position.z);
+
+            }
+            if (!colliding && forward)
+            {
+            // rig.transform.position = pathCreator.path.GetPointAtDistance(speed*Time.deltaTime, EndOfPathInstruction.Stop);
+
+            distanceTravelled += speed * Time.deltaTime;
+            rig.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Loop);
+          //  rig.transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, EndOfPathInstruction.Loop);
+
         }
-        else {
+        if (head.transform.position.x < -2f && head.transform.position.x > 2f)
+            {
 
-            forward = true;
-        }
-
-        if (!colliding && forward)
-        {
-            transform.position = new Vector3(head.transform.position.x, transform.position.y, head.transform.position.z);
-            rig.transform.Translate(transform.forward * Time.deltaTime * speed);
-        }
-        else
-        {
-            transform.position = new Vector3(head.transform.position.x, transform.position.y, transform.position.z);
-
-        }
-
-
+                rig.transform.Translate(transform.up * -1 * Time.deltaTime * speed);
+            }
+        
+        
 
     }
     private void OnCollisionEnter(Collision collision)
     {
         colliding = true;
+        
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -67,5 +93,6 @@ public class movement : MonoBehaviour
     {
         colliding = false;
     }
+ 
 
 }
