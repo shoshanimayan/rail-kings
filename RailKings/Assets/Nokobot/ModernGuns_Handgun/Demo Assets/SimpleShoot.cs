@@ -13,6 +13,7 @@ public class SimpleShoot : MonoBehaviour
     public GameObject muzzleFlashPrefab;
     public Transform barrelLocation;
     public Transform casingExitLocation;
+    public AbleToShoot head;
     bool triggerDown;
     bool previousDown;
 
@@ -32,15 +33,13 @@ public class SimpleShoot : MonoBehaviour
     {
 
         controller = InputDevices.GetDeviceAtXRNode(hand.controllerNode);
-        Debug.Log(triggerDown);
-        Debug.Log(previousDown);
+     
 
 
 
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerDown);
-        if (triggerDown && !previousDown )
+        if (triggerDown && !previousDown &&!head.colliding )
         {
-            Debug.Log("fire");
             GetComponent<Animator>().SetTrigger("Fire");
            //Shoot();
 

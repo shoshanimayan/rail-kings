@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23135005330643918}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1493862398192466938}
   m_Layer: 0
   m_Name: Handgun_M1911A_Black (WithScript)
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
     type: 3}
   barrelLocation: {fileID: 4284830639736152}
   casingExitLocation: {fileID: 4915251581735220}
+  head: {fileID: 0}
   shotPower: 750
 --- !u!65 &1496224093484841629
 BoxCollider:
@@ -197,7 +198,7 @@ GameObject:
   - component: {fileID: 4915251581735220}
   m_Layer: 0
   m_Name: CasingExitLocation
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +230,7 @@ GameObject:
   - component: {fileID: 23532566264068822}
   m_Layer: 0
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,7 +310,7 @@ GameObject:
   - component: {fileID: 23299339877195016}
   m_Layer: 0
   m_Name: M1911A_Magazine
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,7 +389,7 @@ GameObject:
   - component: {fileID: 23159041620518834}
   m_Layer: 0
   m_Name: CasingExit
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +466,7 @@ GameObject:
   - component: {fileID: 4873335824438132}
   m_Layer: 0
   m_Name: M1911A_Magazine_Black
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,7 +497,7 @@ GameObject:
   - component: {fileID: 4284830639736152}
   m_Layer: 0
   m_Name: BarrelLocation
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,7 +529,7 @@ GameObject:
   - component: {fileID: 23052913916948074}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -607,7 +608,7 @@ GameObject:
   - component: {fileID: 23870270141136768}
   m_Layer: 0
   m_Name: Handgun_M1911A (Model)
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

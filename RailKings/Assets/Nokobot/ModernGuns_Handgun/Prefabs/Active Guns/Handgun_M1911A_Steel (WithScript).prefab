@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4493519541437738}
   m_Layer: 0
   m_Name: BarrelLocation
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4123556266775812}
   m_Layer: 0
   m_Name: CasingExitLocation
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 23907462557231218}
   m_Layer: 0
   m_Name: M1911A_Magazine
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 23030404153635848}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 23119185025991300}
   m_Layer: 0
   m_Name: CasingExit
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 4111915443743360}
   m_Layer: 0
   m_Name: M1911A_Magazine_Steel
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 23034248862664144}
   m_Layer: 0
   m_Name: Handgun_M1911A (Model)
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: -1685714823305621878}
   m_Layer: 0
   m_Name: Handgun_M1911A_Steel (WithScript)
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,6 +488,7 @@ MonoBehaviour:
     type: 3}
   barrelLocation: {fileID: 4493519541437738}
   casingExitLocation: {fileID: 4123556266775812}
+  head: {fileID: 0}
   shotPower: 750
 --- !u!65 &865305458063228488
 BoxCollider:
@@ -531,7 +532,7 @@ GameObject:
   - component: {fileID: 23465726823468126}
   m_Layer: 0
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,7 +612,7 @@ GameObject:
   - component: {fileID: 23347495409496850}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

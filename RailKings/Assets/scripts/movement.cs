@@ -26,7 +26,7 @@ public class movement : MonoBehaviour
             // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
             pathCreator.pathUpdated += OnPathChanged;
         }
-        forward = true;
+        forward =false;
         colliding = false;
     }
 
@@ -41,7 +41,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(forward);
+
         
             //check if wall infront of you
             RaycastHit hit;
