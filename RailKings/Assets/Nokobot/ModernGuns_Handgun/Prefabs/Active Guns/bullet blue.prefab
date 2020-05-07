@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: -5821290722929358304}
   m_Layer: 0
   m_Name: bullet blue
-  m_TagString: Untagged
+  m_TagString: gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

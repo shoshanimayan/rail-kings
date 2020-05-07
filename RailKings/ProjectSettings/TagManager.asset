@@ -8,6 +8,7 @@ TagManager:
   - floor
   - start
   - gun
+  - obsticle
   layers:
   - Default
   - TransparentFX

@@ -16,9 +16,10 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collide");
         if (collision.gameObject.tag != "gun" &&collision.gameObject.tag != "MainCamera")
         {
+            Debug.Log(collision.transform.tag);
+
             Destroy(gameObject);
         }
     }

@@ -13,8 +13,7 @@ public class movement : MonoBehaviour
     public GameObject head;
     public bool colliding;
     public PathCreator pathCreator;
-    float distanceTravelled;
-
+    private float distanceTravelled;
     //spline
 
 
@@ -42,7 +41,8 @@ public class movement : MonoBehaviour
     void Update()
     {
 
-        
+        if (GameManager.playing)
+        {
             //check if wall infront of you
             RaycastHit hit;
             Vector3 p1 = transform.position + Vector3.up * 0.25f;
@@ -52,31 +52,20 @@ public class movement : MonoBehaviour
 
             }
 
-
             //no falling, 
             //if not colliding and moving forward follow camera, but not off bounds
             if (head.transform.position.x > -1.28f && head.transform.position.x < 1.28f)
             {
-
                 transform.position = new Vector3(head.transform.position.x, transform.position.y, transform.position.z);
-
             }
+
+
             if (!colliding && forward)
             {
-            // rig.transform.position = pathCreator.path.GetPointAtDistance(speed*Time.deltaTime, EndOfPathInstruction.Stop);
-
-            distanceTravelled += speed * Time.deltaTime;
-            rig.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Loop);
-          //  rig.transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, EndOfPathInstruction.Loop);
-
-        }
-        if (head.transform.position.x < -2f && head.transform.position.x > 2f)
-            {
-
-                rig.transform.Translate(transform.up * -1 * Time.deltaTime * speed);
+                distanceTravelled += speed * Time.deltaTime;
+                rig.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Loop);
             }
-        
-        
+        }
 
     }
     private void OnCollisionEnter(Collision collision)
