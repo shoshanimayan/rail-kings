@@ -17,7 +17,7 @@ public class movement : MonoBehaviour
     //spline
 
 
-    public void Forward() { forward = true; }
+    public void Forward() { forward = true;  }
     void Start()
     {
         if (pathCreator != null)

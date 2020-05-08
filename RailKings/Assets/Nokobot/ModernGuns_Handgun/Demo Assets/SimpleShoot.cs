@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class SimpleShoot : MonoBehaviour
@@ -16,10 +17,12 @@ public class SimpleShoot : MonoBehaviour
     public AbleToShoot head;
     bool triggerDown;
     bool previousDown;
-
+    private int ammo;
+    public Text ammoCount;
     public float shotPower = 100f;
     private void Awake()
     {
+        ammo = 5;
         triggerDown = false;
         previousDown = false;
     }
@@ -33,36 +36,26 @@ public class SimpleShoot : MonoBehaviour
     {
 
         controller = InputDevices.GetDeviceAtXRNode(hand.controllerNode);
-     
-
-
-
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerDown);
-        if (triggerDown && !previousDown &&!head.colliding )
+        if (triggerDown && !previousDown &&!head.colliding && ammo>0 )
         {
             GetComponent<Animator>().SetTrigger("Fire");
-           //Shoot();
-
-
+            ammo--;
+            ammoCount.text = ammo.ToString();
         }
         previousDown = triggerDown;
-       
-        
     }
 
+    void Reload() {
+        ammo = 5;
+        ammoCount.text = ammo.ToString();
+
+    }
     void Shoot()
     {
-        //  GameObject bullet;
-        //  bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
-        // bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-
         GameObject tempFlash;
        Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
        tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
-
-       // Destroy(tempFlash, 0.5f);
-        //  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);
-       
     }
 
     void CasingRelease()
@@ -73,5 +66,11 @@ public class SimpleShoot : MonoBehaviour
         casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(10f, 1000f)), ForceMode.Impulse);
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag=="reload") {
+            Reload();
+            Debug.Log("reload");
+        }
+    }
 }

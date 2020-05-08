@@ -8,7 +8,8 @@ TagManager:
   - floor
   - start
   - gun
-  - obsticle
+  - obstacle
+  - reload
   layers:
   - Default
   - TransparentFX

@@ -18,14 +18,14 @@ public class movingObsticle : MonoBehaviour
     {
         if (searching)
         {
-            if (Vector3.Distance(transform.position, playerObj.transform.position) < 5)
+            if (Vector3.Distance(transform.position, playerObj.transform.position) < 7f)
             {
                 searching = false;
             }
         }
         else {
             if (transform.position.y >= height)
-                transform.Translate(transform.up * -1 * Time.deltaTime);
+                transform.Translate(transform.up * -1 * Time.deltaTime*2);
         }
 
     }

@@ -16,21 +16,24 @@ public class AbleToShoot : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, rayCaster.transform.position) > 2f)
+        if (GameManager.playing)
         {
-            toFar = true;
-        }
-        else
-        {
-            toFar = false;
-        }
-        if (colliding || toFar)
-        {
-            stopSign.SetActive(true);
-        }
-        else
-        {
-            stopSign.SetActive(false);
+            if (Vector3.Distance(transform.position, rayCaster.transform.position) > 2f)
+            {
+                toFar = true;
+            }
+            else
+            {
+                toFar = false;
+            }
+            if (colliding || toFar)
+            {
+                stopSign.SetActive(true);
+            }
+            else
+            {
+                stopSign.SetActive(false);
+            }
         }
     }
 
@@ -41,10 +44,11 @@ public class AbleToShoot : MonoBehaviour
             colliding = true;
 
         }
-        if (collision.transform.tag == "obsticle")
+        if (collision.transform.tag == "obstacle")
         {
+            Debug.Log("obstacle");
             GameManager.playing = false;
-            colliding = false;
+            colliding = true;
         }
     }
 

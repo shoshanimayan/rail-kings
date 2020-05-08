@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool playing;
+    public static bool playing = true;
     // Start is called before the first frame update
-    void Awake()
-    {
-        playing = true;
-    }
+
 
     // Update is called once per frame
     void Update()
