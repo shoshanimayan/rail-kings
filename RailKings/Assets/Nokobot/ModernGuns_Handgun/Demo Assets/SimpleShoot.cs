@@ -37,11 +37,9 @@ public class SimpleShoot : MonoBehaviour
 
         controller = InputDevices.GetDeviceAtXRNode(hand.controllerNode);
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerDown);
-        if (triggerDown && !previousDown &&!head.colliding && ammo>0 )
+        if (triggerDown && !previousDown &&!head.colliding && ammo > 0)
         {
             GetComponent<Animator>().SetTrigger("Fire");
-            ammo--;
-            ammoCount.text = ammo.ToString();
         }
         previousDown = triggerDown;
     }
@@ -53,9 +51,14 @@ public class SimpleShoot : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject tempFlash;
-       Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-       tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
+        if (ammo > 0)
+        {
+            GameObject tempFlash;
+            Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+            ammo--;
+            ammoCount.text = ammo.ToString();
+            tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
+        }
     }
 
     void CasingRelease()
