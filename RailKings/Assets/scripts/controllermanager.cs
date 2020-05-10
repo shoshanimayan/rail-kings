@@ -9,7 +9,9 @@ public class controllermanager : MonoBehaviour
 	public XRController leftHand;
 	public XRController rightHand;
 	public movement movement;
-	
+	public static Vector3 velocityL = Vector3.zero;
+	public static Vector3 velocityR = Vector3.zero;
+
 
 	private void Update()
 	{
@@ -24,7 +26,6 @@ public class controllermanager : MonoBehaviour
 		bool secondaryTouchL = false;
 		float triggerDownL = 0;
 		Vector3 positionL = Vector3.zero;
-		Vector3 velocityL = Vector3.zero;
 		Quaternion rotationL = new Quaternion();
 
 
@@ -37,7 +38,6 @@ public class controllermanager : MonoBehaviour
 		bool b1R= false;
 		bool b2R = false;
 		Vector3 positionR = Vector3.zero;
-		Vector3 velocityR = Vector3.zero;
 		Quaternion rotationR = new Quaternion();
 
 

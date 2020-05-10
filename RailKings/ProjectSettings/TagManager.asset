@@ -10,6 +10,8 @@ TagManager:
   - gun
   - obstacle
   - reload
+  - bullet
+  - door
   layers:
   - Default
   - TransparentFX

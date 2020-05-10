@@ -9,8 +9,10 @@ public class AbleToShoot : MonoBehaviour
     public bool toFar = false;
     public GameObject stopSign;
     public GameObject rayCaster;
+    public int health;
     private void Awake()
     {
+        health = 3;
         stopSign.SetActive(false);
     }
 
@@ -34,6 +36,12 @@ public class AbleToShoot : MonoBehaviour
             {
                 stopSign.SetActive(false);
             }
+
+            if (health <= 0)
+            {
+                GameManager.playing = false;
+                colliding = true;
+            }
         }
     }
 
@@ -50,6 +58,9 @@ public class AbleToShoot : MonoBehaviour
             GameManager.playing = false;
             colliding = true;
         }
+        if (collision.transform.tag == "bullet")
+            health -= 1;
+
     }
 
     private void OnCollisionStay(Collision collision)
