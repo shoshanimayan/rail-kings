@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b580cf316353cd04cbbbdac80a8085e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forward: 0
   gravityMultiplier: 1
   speed: 2
   rig: {fileID: 8102576430909291898}
@@ -1345,6 +1346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ab0fc8fafa115408dd22eaf9f4ed39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: 1
+  mover: {fileID: 8102576431284178759}
 --- !u!114 &3146063701535646350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,6 +1360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ab0fc8fafa115408dd22eaf9f4ed39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: 0
+  mover: {fileID: 8102576431284178759}
 --- !u!1001 &8102576430637757453
 PrefabInstance:
   m_ObjectHideFlags: 0

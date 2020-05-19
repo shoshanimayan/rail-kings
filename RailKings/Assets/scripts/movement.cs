@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using PathCreation;
 public class movement : MonoBehaviour
 {
-    private bool forward;
+    public bool forward;
     public float gravityMultiplier = 1f;
     public float speed = 2f;
     public GameObject rig ;
