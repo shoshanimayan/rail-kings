@@ -10,7 +10,6 @@ public class DoorHandler : MonoBehaviour
     public controller hand;
     private Vector3 velocity;
     private IEnumerator coroutine;
-    public movement mover;
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "door")
@@ -35,7 +34,6 @@ public class DoorHandler : MonoBehaviour
         switch (doorEnum)
         {
             case (DoorType.Door.normal):
-                mover.Forward(); 
                 break;
             case (DoorType.Door.exit):
                 Application.Quit();
@@ -109,7 +107,7 @@ public class DoorHandler : MonoBehaviour
 
         // 4.
         half.GetComponent<Collider>().isTrigger = false;
-        Destroy(half, 2);
+        Destroy(half, 1);
         return half;
     }
 

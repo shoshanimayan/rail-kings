@@ -48,7 +48,7 @@ public class movement : MonoBehaviour
             Vector3 p1 = transform.position + Vector3.up * 0.25f;
             if (Physics.Raycast(p1, Vector3.forward, out hit, .5f))
             {
-                if (hit.transform.tag == "wall") { forward = false; }
+                if (hit.transform.tag == "wall" || hit.transform.tag == "door") { forward = false; }
 
             }
 
