@@ -19,7 +19,7 @@ public class SimpleShoot : MonoBehaviour
     bool previousDown;
     private int ammo;
     public Text ammoCount;
-    public float shotPower = 100f;
+    public float shotPower = 1000f;
     private void Awake()
     {
         ammo = 5;
