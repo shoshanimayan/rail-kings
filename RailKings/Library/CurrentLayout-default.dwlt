@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 95
+  controlID: 61
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 96
+  controlID: 62
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 97
+  controlID: 63
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -5384
+  m_LastSelectedObjectID: 49542
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -351,10 +351,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 508
-    y: 84
-    width: 1034
-    height: 561
+    x: 2424
+    y: 73
+    width: 1043
+    height: 573
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
@@ -476,34 +476,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Nokobot/ModernGuns_Handgun/Prefabs/Active Guns
+    - Assets/Nokobot/ModernGuns_Handgun/Effects
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Nokobot/ModernGuns_Handgun/Prefabs/Active Guns
+  - Assets/Nokobot/ModernGuns_Handgun/Effects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Shosh\OneDrive\Documents\rail-kings\RailKings
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 94420000
-    m_LastClickedID: 17044
-    m_ExpandedIDs: 0000000080420000844200008642000092420000c8440000d8440000e04b000000ca9a3b
+    scrollPos: {x: 0, y: 80}
+    m_SelectedIDs: 46430000
+    m_LastClickedID: 17222
+    m_ExpandedIDs: 000000000443000040430000424300004e4300006445000084450000808a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: RW
+      m_OriginalName: RW
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 17802
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -517,7 +517,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000080420000
+    m_ExpandedIDs: 0000000004430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -545,7 +545,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300004a410000ea370000e8420000a8a5040086410000f45100000000000076400000ba4100002e4c0000284c0000d4590000
+    m_ExpandedInstanceIDs: c62300004a410000ea370000e8420000a8a5040086410000f45100000000000076400000ba4100002e4c0000284c0000d459000030420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,7 +610,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 100
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -640,23 +640,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 44660000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 9e80ffff5c81ffff8281ffff9a81ffff3890ffff7690ffff9e9cffffa89cffffaa9cffffb49cffffbc9cffffc49cffffdc9cfffff49cfffffe9cffff029dffff169dffff289dffff349dffff4a9dffff4e9dffff529dffff669dffff689dffff6c9dffff729dffff8e9dffff969dffffa69dfffff8eafffffaeafffffceaffff00ebfffffafaffff0efbffff6afbffff243f0000
+      m_SelectedIDs: 46c20000
+      m_LastClickedID: 49734
+      m_ExpandedIDs: 3292feff46c20000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: FX_Explosion_Fire
+        m_OriginalName: FX_Explosion_Fire
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 49182
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -695,16 +695,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 53cf60976430e534a93dfcefc8d64f24
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.78179, y: 0.11116805, z: 4.306887}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: -2.78179, y: 0.11116805, z: 4.306887}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -750,13 +750,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.1816451, y: 0.43297386, z: -0.09048386, w: -0.8784948}
+    m_Target: {x: -0.2184688, y: -0.72322696, z: 0.2623418, w: -0.60075164}
     speed: 2
-    m_Value: {x: -0.18160862, y: 0.4328869, z: -0.09046569, w: -0.87831837}
+    m_Value: {x: -0.21841295, y: -0.7230421, z: 0.26227474, w: -0.60059804}
   m_Size:
-    m_Target: 1.1576419
+    m_Target: 1.8000174
     speed: 2
-    m_Value: 1.1576419
+    m_Value: 1.8000174
   m_Ortho:
     m_Target: 0
     speed: 2

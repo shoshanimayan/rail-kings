@@ -30,24 +30,18 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-       // if (Physics.Raycast(gun1.transform.position,Vector3.forward,out hit,IgnoreMe))
-        if(Vector3.Distance(transform.position,Camera.main.transform.position)<=distance)
+        if(Vector3.Distance(transform.position,Camera.main.transform.position)<=distance && GameManager.playing)
         {
-            // Debug.Log(hit.transform.tag);
-
-            // if (hit.transform.tag == "Player")
-            // {
+       
             if (timer<= 0)
             {
-                Debug.Log("shoot");
-                Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation).GetComponent<Rigidbody>().AddForce(gun1.transform.forward * 100f);
-                timer = 2f;
+                Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation).GetComponent<Rigidbody>().AddForce(gun1.transform.forward * 1000f);
+                timer = 1f;
                 ChangeGun();
             }
             else
                 timer -= Time.deltaTime;
-            //}
+            
         }
 
     }

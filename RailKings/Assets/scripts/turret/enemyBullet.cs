@@ -18,7 +18,6 @@ public class enemyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag != "enemy")
         {
-            Debug.Log(collision.transform.tag);
 
             Destroy(gameObject);
         }
