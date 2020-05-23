@@ -13,9 +13,11 @@ public class Turret : MonoBehaviour
     public float distance = 7f;
     float timer = 0;
     private LayerMask IgnoreMe= ~(1 << 10);
-
+    private AudioSource AS;
+    public AudioClip shot;
     private void Start()
     {
+        AS = GetComponent<AudioSource>();
         spawnPoint = gun1;
     }
 
@@ -35,7 +37,8 @@ public class Turret : MonoBehaviour
        
             if (timer<= 0)
             {
-                Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation).GetComponent<Rigidbody>().AddForce(gun1.transform.forward * 1000f);
+                AS.PlayOneShot(shot);
+                Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation).GetComponent<Rigidbody>().AddForce(gun1.transform.forward * 500f);
                 timer = 1f;
                 ChangeGun();
             }

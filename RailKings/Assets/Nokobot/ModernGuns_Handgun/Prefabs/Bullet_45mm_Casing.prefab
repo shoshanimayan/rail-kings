@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 4516850313033972}
   - component: {fileID: 136132550391131772}
   - component: {fileID: 54736518851447296}
-  - component: {fileID: 7221102631570219274}
   m_Layer: 0
   m_Name: Bullet_45mm_Casing
   m_TagString: gun
@@ -143,15 +142,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7221102631570219274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482960508195586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14deb0a5a961e44dab11d69f6615681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

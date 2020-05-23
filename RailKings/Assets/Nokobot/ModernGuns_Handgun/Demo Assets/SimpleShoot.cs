@@ -20,11 +20,18 @@ public class SimpleShoot : MonoBehaviour
     private int ammo;
     public Text ammoCount;
     public float shotPower = 1000f;
+    private AudioSource AS;
+    public AudioClip shot;
+    public AudioClip noShot;
+    public AudioClip reload;
+
+
     private void Awake()
     {
         ammo = 5;
         triggerDown = false;
         previousDown = false;
+        AS = GetComponent<AudioSource>();
     }
     void Start()
     {
@@ -37,14 +44,17 @@ public class SimpleShoot : MonoBehaviour
 
         controller = InputDevices.GetDeviceAtXRNode(hand.controllerNode);
         controller.TryGetFeatureValue(CommonUsages.triggerButton, out triggerDown);
-        if (triggerDown && !previousDown &&!head.colliding && ammo > 0)
+        if (triggerDown && !previousDown && !head.colliding )
         {
-            GetComponent<Animator>().SetTrigger("Fire");
+            if( ammo > 0)
+                GetComponent<Animator>().SetTrigger("Fire");
+            else { AS.PlayOneShot(noShot); }
         }
         previousDown = triggerDown;
     }
 
     void Reload() {
+        AS.PlayOneShot(reload);
         ammo = 5;
         ammoCount.text = ammo.ToString();
 
@@ -54,6 +64,7 @@ public class SimpleShoot : MonoBehaviour
         if (ammo > 0)
         {
             GameObject tempFlash;
+            AS.PlayOneShot(shot);
             Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
             ammo--;
             ammoCount.text = ammo.ToString();
@@ -64,16 +75,17 @@ public class SimpleShoot : MonoBehaviour
     void CasingRelease()
     {
          GameObject casing;
+
         casing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
         casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
         casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(10f, 1000f)), ForceMode.Impulse);
+        Destroy(casing, 5f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag=="reload") {
             Reload();
-            Debug.Log("reload");
         }
     }
 }

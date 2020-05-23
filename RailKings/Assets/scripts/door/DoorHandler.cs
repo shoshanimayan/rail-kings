@@ -10,12 +10,19 @@ public class DoorHandler : MonoBehaviour
     public controller hand;
     private Vector3 velocity;
     private IEnumerator coroutine;
+    private AudioSource AS;
+    public AudioClip shot;
+    private void Awake()
+    {
+        AS = GetComponent<AudioSource>();
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "door")
         {
 
-
+            AS.PlayOneShot(shot);
             SplitMesh(other.gameObject);
             DoorType.Door Door = other.GetComponent<DoorType>().door;
             coroutine = DoorAction(Door, 2f);

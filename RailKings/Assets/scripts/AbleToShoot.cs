@@ -12,14 +12,20 @@ public class AbleToShoot : MonoBehaviour
     public GameObject stopSign;
     public GameObject gameOverSign;
     public GameObject rayCaster;
+    private AudioSource AS;
+    public AudioClip hurtSound;
     private void Awake()
     {
+        AS = GetComponent<AudioSource>();
+
         bloodUI.SetActive(false);
         stopSign.SetActive(false);
         gameOverSign.SetActive(false);
     }
 
     IEnumerator BloodDamage() {
+        bloodUI.SetActive(true);
+        AS.PlayOneShot(hurtSound);
         yield return new  WaitForSeconds(.5f);
         bloodUI.SetActive(false);
     }
@@ -69,7 +75,6 @@ public class AbleToShoot : MonoBehaviour
         if (collision.transform.tag == "enemy")
         {
             GameManager.health -= 1;
-            bloodUI.SetActive(true);
             StartCoroutine(BloodDamage());
         }
 
