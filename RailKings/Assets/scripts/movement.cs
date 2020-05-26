@@ -8,7 +8,7 @@ public class movement : MonoBehaviour
 {
     public bool forward;
     public float gravityMultiplier = 1f;
-    public float speed = 2f;
+    public float speed = 2.5f;
     public GameObject rig ;
     public GameObject head;
     public bool colliding;
@@ -17,7 +17,20 @@ public class movement : MonoBehaviour
     //spline
 
 
-    public void Forward() { forward = true;  }
+    public void Forward() {
+            forward = true;
+    }
+
+    public void SpeedUp()
+    {
+        speed = 7f;
+    }
+    public void SpeedDown()
+    {
+        speed = 2.5f;
+    }
+
+
     void Start()
     {
         if (pathCreator != null)

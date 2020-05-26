@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 4496857204406966025, guid: fc269b00f5cc7f342a56b51d943f5ec4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 4496857204406966025, guid: fc269b00f5cc7f342a56b51d943f5ec4,
         type: 3}
@@ -4812,7 +4812,11 @@ PrefabInstance:
     - target: {fileID: 2023848321064770714, guid: d33179d483106964abdc0f55f66d98d3,
         type: 3}
       propertyPath: m_Text
-      value: stay on the path
+      value: 'Press A or X when not in cover to move faster
+
+
+        stay on the
+        path'
       objectReference: {fileID: 0}
     - target: {fileID: 2023848321064770714, guid: d33179d483106964abdc0f55f66d98d3,
         type: 3}

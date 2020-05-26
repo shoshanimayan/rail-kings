@@ -72,9 +72,13 @@ public class controllermanager : MonoBehaviour
 		handR.TryGetFeatureValue(CommonUsages.secondaryButton, out b2R);
 
 
-		if (b1L || b1R) {
+		if (b1L || b1R)
+		{
 			movement.Forward();
-		
+			movement.SpeedUp();
+		}
+		else {
+			movement.SpeedDown();
 		}
 
 
