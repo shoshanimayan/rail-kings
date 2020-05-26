@@ -8,7 +8,7 @@ public class movement : MonoBehaviour
 {
     public bool forward;
     public float gravityMultiplier = 1f;
-    public float speed = 2.5f;
+    public float speed = 2f;
     public GameObject rig ;
     public GameObject head;
     public bool colliding;
@@ -27,7 +27,7 @@ public class movement : MonoBehaviour
     }
     public void SpeedDown()
     {
-        speed = 2.5f;
+        speed = 2f;
     }
 
 
@@ -76,7 +76,7 @@ public class movement : MonoBehaviour
             if (!colliding && forward)
             {
                 distanceTravelled += speed * Time.deltaTime;
-                rig.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Loop);
+                rig.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
             }
         }
 
