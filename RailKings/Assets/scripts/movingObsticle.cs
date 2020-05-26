@@ -7,6 +7,9 @@ public class movingObsticle : MonoBehaviour
     private GameObject playerObj = null;
     private bool searching = true;
     public float height;
+    public float distance=7
+        ;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -18,7 +21,7 @@ public class movingObsticle : MonoBehaviour
     {
         if (searching)
         {
-            if (Vector3.Distance(transform.position, playerObj.transform.position) < 7f)
+            if (Vector3.Distance(transform.position, playerObj.transform.position) < distance)
             {
                 searching = false;
             }
