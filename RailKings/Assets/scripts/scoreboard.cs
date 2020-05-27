@@ -8,6 +8,6 @@ public class scoreboard : MonoBehaviour
     public Text board;
     void Update()
     {
-        board.text = "Score: " +GameManager.points.ToString();
+        board.text = "Score: ";//+GameManager.points.ToString();
     }
 }

@@ -13,6 +13,7 @@ public class AbleToShoot : MonoBehaviour
     public GameObject rayCaster;
     private AudioSource AS;
     public AudioClip hurtSound;
+    public movement move;
     private void Awake()
     {
         AS = GetComponent<AudioSource>();
@@ -32,7 +33,7 @@ public class AbleToShoot : MonoBehaviour
     {
         if (GameManager.playing)
         {
-            if (Vector3.Distance(transform.position, rayCaster.transform.position) > 2f)
+            if (Vector3.Distance(transform.position, rayCaster.transform.position) > 1.5f)
             {
                 toFar = true;
             }
@@ -48,8 +49,6 @@ public class AbleToShoot : MonoBehaviour
             {
                 stopSign.SetActive(false);
             }
-
-
         }
         else {
             gameOverSign.SetActive(true);
@@ -63,6 +62,7 @@ public class AbleToShoot : MonoBehaviour
 
 
         if (collision.transform.tag == "wall" ) {
+            move.Pushback();
             colliding = true;
 
         }

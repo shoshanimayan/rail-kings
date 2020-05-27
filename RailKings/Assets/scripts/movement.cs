@@ -29,7 +29,12 @@ public class movement : MonoBehaviour
     {
         speed = 2f;
     }
-
+    
+    public void Pushback()
+    {
+        rig.transform.Translate(Vector3.back*speed*Time.deltaTime);
+        
+    }
 
     void Start()
     {
